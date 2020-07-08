@@ -45,13 +45,17 @@ public class ProductService {
 	public List<Product> findByBrandAndOrCategory(String brand, String category) 
 	{
 	  List<Product> products = new ArrayList<>();
-	  if(category == null && brand == null) {
+	  if(category == null && brand == null) 
+	  {
 	    products = productRepository.findAll();
-	  } else if(category == null) {
+	  } else if(category == null) 
+	  {
 	    products = productRepository.findByBrand(brand);
-	  } else if(brand == null) {
+	  } else if(brand == null) 
+	  {
 	    products = productRepository.findByCategory(category);
-	  } else {
+	  } else 
+	  {
 	    products = productRepository.findByBrandAndCategory(brand, category);
 	  }
 	  return products;
