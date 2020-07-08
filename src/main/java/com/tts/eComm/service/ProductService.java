@@ -1,12 +1,15 @@
 package com.tts.eComm.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.tts.eComm.model.Product;
 import com.tts.eComm.repository.ProductRepository;
-import java.util.List;
-import java.util.ArrayList;
 
+@Service
 public class ProductService {
 	
 	@Autowired
