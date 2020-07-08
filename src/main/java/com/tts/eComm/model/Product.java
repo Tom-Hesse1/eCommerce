@@ -69,92 +69,114 @@ public class Product {
 		this.updatedAt = updatedAt;
 	}
 
-	public String getName() {
+	public String getName() 
+	{
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setName(String name) 
+	{
 		this.name = name;
 	}
 
-	public Double getWholesalePrice() {
+	public Double getWholesalePrice() 
+	{
 		return wholesalePrice;
 	}
 
-	public void setWholesalePrice(Double wholesalePrice) {
+	public void setWholesalePrice(Double wholesalePrice) 
+	{
 		this.wholesalePrice = wholesalePrice;
 	}
 
-	public Double getRetailPrice() {
+	public Double getRetailPrice() 
+	{
 		return retailPrice;
 	}
 
-	public void setRetailPrice(Double retailPrice) {
+	public void setRetailPrice(Double retailPrice) 
+	{
 		this.retailPrice = retailPrice;
 	}
 
-	public String getBrand() {
+	public String getBrand() 
+	{
 		return brand;
 	}
 
-	public void setBrand(String brand) {
+	public void setBrand(String brand) 
+	{
 		this.brand = brand;
 	}
 
-	public String getCategory() {
+	public String getCategory() 
+	{
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(String category) 
+	{
 		this.category = category;
 	}
 
-	public String getDescription() {
+	public String getDescription() 
+	{
 		return description;
 	}
 
-	public void setDescription(String description) {
+	public void setDescription(String description) 
+	{
 		this.description = description;
 	}
 
-	public Integer getInventory() {
+	public Integer getInventory() 
+	{
 		return inventory;
 	}
 
-	public void setInventory(Integer inventory) {
+	public void setInventory(Integer inventory) 
+	{
 		this.inventory = inventory;
 	}
 
-	public String getImage() {
+	public String getImage() 
+	{
 		return image;
 	}
 
-	public void setImage(String image) {
+	public void setImage(String image) 
+	{
 		this.image = image;
 	}
 
-	public Date getCreatedAt() {
+	public Date getCreatedAt() 
+	{
 		return createdAt;
 	}
 
-	public void setCreatedAt(Date createdAt) {
+	public void setCreatedAt(Date createdAt) 
+	{
 		this.createdAt = createdAt;
 	}
 
-	public Date getUpdatedAt() {
+	public Date getUpdatedAt() 
+	{
 		return updatedAt;
 	}
 
-	public void setUpdatedAt(Date updatedAt) {
+	public void setUpdatedAt(Date updatedAt) 
+	{
 		this.updatedAt = updatedAt;
 	}
 
-	public Long getId() {
+	public Long getId() 
+	{
 		return id;
 	}
 
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "Product [id=" + id + ", name=" + name + ", wholesalePrice=" + wholesalePrice + ", retailPrice="
 				+ retailPrice + ", brand=" + brand + ", category=" + category + ", description=" + description
 				+ ", inventory=" + inventory + ", image=" + image + ", createdAt=" + createdAt + ", updatedAt="
