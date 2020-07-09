@@ -32,7 +32,8 @@ public class CartService {
 		List<HashMap<Product, Integer>> cartItems = cart.getLineItems();
 		  
 		if (quantity > 0) {
-		    cartItems.put(product, quantity);
+		    cartItems.add(product, quantity);
+		    //cartItems = cart.getLineItems();
 		  } else {
 		    cartItems.remove(product);
 		  }
