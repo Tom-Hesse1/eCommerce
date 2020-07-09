@@ -6,21 +6,22 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.tts.eComm.model.Cart;
 import com.tts.eComm.model.Product;
 import com.tts.eComm.service.ProductService;
 import com.tts.eComm.service.UserService;
-import com.tts.eComm.model.Cart;
 
 @Controller
-//@ RequestMapping("/storefront")
+@RequestMapping("/storefront") //Question this
 public class CartController {
 	
 	@Autowired
 	private ProductService productService;
 	private UserService userService;
-	// private Cart cart??
+	private Cart cart;
 	
 	@GetMapping("/cart")
 	public String showCart() {
@@ -30,7 +31,7 @@ public class CartController {
 	@PostMapping("/cart")
 	public String addToCart(@RequestParam long id) {
 		Product product = productService.findById(id);
-		setQuantity(product, Cart().getOrDefault(product, 0) + 1);
+		setQuantity(product, new Cart().getOrDefault(product, 0) + 1);
 		return "storefront/cart";
 	}
 	
@@ -52,23 +53,19 @@ public class CartController {
 	
 	private void setQuantity(Product p, int quantity) {
 		if(quantity > 0) {
-			Cart().put(p, quantity);
+			cart.put(p, quantity);
 		} else {
-			Cart().remove(p);
+			cart.remove(p);
 		}
-		userService.updateCart(Cart());
+		userService.updateCart(cart);
 	}
-	/*
-	 * @GetMapping("/cart")
-	 * public String viewCart(Cart cart, Model model)
-	 * {
-	 * 	//code for cart
-	 * 	model.addAttributes("cart", cart);
-	 * return "storefront/cart";
-	 * }  SIMILAR TO SHOW CART
-	 * 
-	 * 
-	 * 
-	 * 
-	 * */
+	 
+	@GetMapping("/cart")
+	 public String viewCart(Cart cart, Model model)
+	{
+	  	//code for cart
+	  	model.addAttributes("cart", cart);
+	  return "storefront/cart";
+	} // SIMILAR TO SHOW CART
+	
 }

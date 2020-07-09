@@ -12,7 +12,7 @@ import com.tts.eComm.model.Product;
 
 @Service
 public class CartService {
-	
+	//NEED HELP ON THIS ONE
 	
 	@Autowired
 	private ProductService productService;
@@ -32,7 +32,7 @@ public class CartService {
 		List<HashMap<Product, Integer>> cartItems = cart.getLineItems();
 		  
 		if (quantity > 0) {
-		    cartItems.add(product, quantity);
+		    cartItems.set(product, cartItems);
 		    //cartItems = cart.getLineItems();
 		  } else {
 		    cartItems.remove(product);
