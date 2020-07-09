@@ -9,7 +9,7 @@ public class Cart {
 	private List<HashMap<Product, Integer>> lineItems;
 	private Double subTotal;
 	
-	Cart() {}
+	public Cart() {}
 
 	public Cart(User user, String date, List<HashMap<Product, Integer>> lineItems, Double subTotal) {
 		this.user = user;

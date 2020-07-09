@@ -11,13 +11,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.tts.eComm.model.Product;
 import com.tts.eComm.service.ProductService;
 import com.tts.eComm.service.UserService;
+import com.tts.eComm.model.Cart;
 
 @Controller
+//@ RequestMapping("/storefront")
 public class CartController {
 	
 	@Autowired
 	private ProductService productService;
 	private UserService userService;
+	// private Cart cart??
 	
 	@GetMapping("/cart")
 	public String showCart() {
@@ -27,7 +30,7 @@ public class CartController {
 	@PostMapping("/cart")
 	public String addToCart(@RequestParam long id) {
 		Product product = productService.findById(id);
-		setQuantity(product, cart().getOrDefault(product, 0) + 1);
+		setQuantity(product, Cart().getOrDefault(product, 0) + 1);
 		return "storefront/cart";
 	}
 	
@@ -49,10 +52,23 @@ public class CartController {
 	
 	private void setQuantity(Product p, int quantity) {
 		if(quantity > 0) {
-			cart().put(p, quantity);
+			Cart().put(p, quantity);
 		} else {
-			cart().remove(p);
+			Cart().remove(p);
 		}
-		userService.updateCart(cart());
+		userService.updateCart(Cart());
 	}
+	/*
+	 * @GetMapping("/cart")
+	 * public String viewCart(Cart cart, Model model)
+	 * {
+	 * 	//code for cart
+	 * 	model.addAttributes("cart", cart);
+	 * return "storefront/cart";
+	 * }  SIMILAR TO SHOW CART
+	 * 
+	 * 
+	 * 
+	 * 
+	 * */
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tts.eComm.model.Product;
 import com.tts.eComm.service.ProductService;
+import com.tts.eComm.model.Cart;
 
 @Controller
 public class MainController {
@@ -39,5 +40,16 @@ public class MainController {
 	  public String about() {
 	    return "storefront/about";
 	  }
-
+	  /* Need methods needed
+	   * @GetMapping("/")
+	   * public String index(Model model)
+	   * {
+	   * 	model.addAttribute("cart", new Cart());
+	   * 	return "storefront/index";
+	   * }
+	   * 
+	   * 
+	   * 
+	   * 
+	   * */
 }
