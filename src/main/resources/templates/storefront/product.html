@@ -8,9 +8,31 @@
 </head>
 <body>
 
-<div th:replace="storefront/fragments/navbar"></div>
+	<div th:replace="storefront/fragments/navbar"></div>
 	<div class="container-fluid">
-		<h1>Products</h1>
+		<div class="header-info">
+			<h1>
+				<span th:text="${product.name}"></span>
+			</h1>
+			<h3>
+				From: <span th:text="${product.brand}"></span>
+			</h3>
+			<div class="product-image">
+				<img th:src="${product.image}">
+			</div>
+			<div class="add-button">
+				<form th:action="@{/add/} + ${product.name}" method="post">
+					<button style="float: right;" type="Submit"
+						class="btn btn-md btn-primary">Add To Cart</button>
+				</form>
+			</div>
+			<div class="price-info">
+				<h5>
+					$<span th:text="${product.retailPrice}"></span>
+				</h5>
+				<p th:text="${product.description}"></p>
+			</div>
+		</div>
 	</div>
 
 </body>
