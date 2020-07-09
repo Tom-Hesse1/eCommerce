@@ -9,7 +9,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.tts.eComm.model.Role;
 import com.tts.eComm.model.User;
+import com.tts.eComm.repository.RoleRepository;
 import com.tts.eComm.repository.UserRepository;
 
 @Service
