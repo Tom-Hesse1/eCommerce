@@ -19,7 +19,7 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
-	@GetMapping("/product/{productId}")
+	@GetMapping("/storefront/products/{productId}")
 	public String show(@PathVariable Long id, Model model)
 	{
 		Product product = productService.findById(id);
@@ -27,7 +27,7 @@ public class ProductController {
 		return "storefront/product";
 	}
 	
-	@RequestMapping(value = {"/products/new", "/products/{productId}/edit"}, method = {RequestMethod.POST, RequestMethod.PUT})
+	@RequestMapping(value = {"/admin/products/new", "/admin/products/{productId}/edit"}, method = {RequestMethod.POST, RequestMethod.PUT})
 	public String createOrUpdate(@Valid Product product)
 	{
 		productService.save(product);
