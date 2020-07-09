@@ -28,18 +28,18 @@ public class Product {
 	@PositiveOrZero(message = "Product wholesale price cannot be negative")
 	private Double wholesalePrice;
 	
-	@PositiveOrZero(message = "Product retail price cannot be negative") //but is zero really ok?
+	@PositiveOrZero(message = "Product retail price cannot be negative") 
 	private Double retailPrice;
 	
-	@NotBlank(message = "Product brand cannot be blank") //somebody made it, right?
+	@NotBlank(message = "Product brand cannot be blank") 
 	private String brand;
 	
 	@NotBlank(message = "Product category cannot be blank")
 	private String category;
 	
-	private String description; //is it ok to create a product and add a description later? or not?
+	private String description;
 
-	private Integer inventory; //negative inventory doesn't really make sense, can't sell it if it isn't there 
+	private Integer inventory;
 
 	private String image; //is it ok to create a product and add an image file path later? or not?
 	

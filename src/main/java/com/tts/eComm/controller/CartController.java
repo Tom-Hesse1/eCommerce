@@ -20,18 +20,25 @@ public class CartController {
 	
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
 	private UserService userService;
-	private Cart cart;
 	
 	@GetMapping("/cart")
 	public String showCart() {
 		return "storefront/cart";
 	}
 	
+	@GetMapping("/storefront/cart")
+	public String viewCart(Cart cart, Model model) {
+	  addAttribute("cart", cart);
+	  return "storefront/cart";
+	}
+	
 	@PostMapping("/cart")
 	public String addToCart(@RequestParam long id) {
 		Product product = productService.findById(id);
-		setQuantity(product, new Cart().getOrDefault(product, 0) + 1);
+		setQuantity(product, cart().getOrDefault(product, 0) + 1);
 		return "storefront/cart";
 	}
 	

@@ -20,9 +20,9 @@ public class ProductService {
 	  return productRepository.findAll();
 	}
 
-	public Product findById(long id) 
+	public Product findProductById(long id) 
 	{
-	  return productRepository.findById(id);
+	  return productRepository.findProductById(id);
 	}
 
 	public List<String> findBrands() 
