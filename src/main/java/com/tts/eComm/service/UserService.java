@@ -1,8 +1,8 @@
 package com.tts.eComm.service;
 
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
+import java.util.HashSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,7 +16,7 @@ import com.tts.eComm.repository.UserRepository;
 
 @Service
 public class UserService {
-	
+
 	private UserRepository userRepository;
 	private RoleRepository roleRepository;
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -28,26 +28,23 @@ public class UserService {
 		this.roleRepository = roleRepository;
 		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
 	}
-	
-	public List<User> findAll()
-	{
+
+	public List<User> findAll() {
 		return (List<User>) userRepository.findAll();
 	}
-	
-	public User findById(long id)
-	{
+
+	public User findById(long id) {
 		return userRepository.findById(id);
 	}
-	
-	public User findByUsername(String username)
-	{
+
+	public User findByUsername(String username) {
 		return userRepository.findByUsername(username);
 	}
-	
+
 	public void save(User user) {
 		userRepository.save(user);
 	}
-	
+
 	public User saveNewUser(User user) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		user.setActive(1);
