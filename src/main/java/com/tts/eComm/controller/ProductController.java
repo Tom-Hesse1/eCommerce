@@ -22,7 +22,7 @@ public class ProductController {
 	@GetMapping("/storefront/products/{productId}")
 	public String show(@PathVariable Long id, Model model)
 	{
-		Product product = productService.findById(id);
+		Product product = productService.findProductById(id);
 		model.addAttribute(product);
 		return "storefront/product";
 	}
