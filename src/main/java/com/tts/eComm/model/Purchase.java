@@ -6,5 +6,5 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "purchase")
 public class Purchase {
-
+	//Need to Complete this!!
 }
