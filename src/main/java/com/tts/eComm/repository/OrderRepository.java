@@ -10,10 +10,10 @@ public interface OrderRepository extends CrudRepository<Order, Long> {
 	
 	public List<Order> findAll();
 	
-	public Order findById(long id);
+	public Order findOrderById(long id);
 	
-	public Order findByDate(String date);
+	public Order findOrderByDate(String date);
 	
-	public Order findByArrivalDate(String arrivalDate);
+	public Order findOrderByArrivalDate(String arrivalDate);
 
 }
