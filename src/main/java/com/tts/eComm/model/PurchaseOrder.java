@@ -11,12 +11,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "orders")
-public class Order {
+public class PurchaseOrder {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "product_id")
-	private Long orderId;
+	private Long purchaseorderId;
 	
 	private User user;
 	private String date;
@@ -27,13 +27,13 @@ public class Order {
 	private Double total;
 	private String arrivalDate;
 	
-	public Order() {
+	public PurchaseOrder() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Order(Long orderId, User user, String date, ArrayList<Product> items, Double subTotal, Double shippingCost,
+	public PurchaseOrder(Long purchaseorderId, User user, String date, ArrayList<Product> items, Double subTotal, Double shippingCost,
 			Double tax, Double total, String arrivalDate) {
-		this.orderId = orderId;
+		this.purchaseorderId = purchaseorderId;
 		this.user = user;
 		this.date = date;
 		this.items = items;
@@ -109,12 +109,12 @@ public class Order {
 	}
 
 	public Long getOrderId() {
-		return orderId;
+		return purchaseorderId;
 	}
 
 	@Override
 	public String toString() {
-		return "Order [orderId=" + orderId + ", user=" + user + ", date=" + date + ", items=" + items + ", subTotal="
+		return "PurchaseOrder [purchaseorderId=" + purchaseorderId + ", user=" + user + ", date=" + date + ", items=" + items + ", subTotal="
 				+ subTotal + ", shippingCost=" + shippingCost + ", tax=" + tax + ", total=" + total + ", arrivalDate="
 				+ arrivalDate + "]";
 	}

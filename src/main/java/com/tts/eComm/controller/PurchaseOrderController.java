@@ -7,27 +7,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.tts.eComm.model.Order;
+import com.tts.eComm.model.PurchaseOrder;
+import com.tts.eComm.service.PurchaseOrderService;
 
 @Controller
 @RequestMapping("/storefront")
-public class OrderController {
+public class PurchaseOrderController {
 
 	@Autowired
-	private OrderService orderService;
+	private PurchaseOrderService orderService;
 	
-	@GetMapping("/order/{orderId}")
+	@GetMapping("/purchaseOrder/{purchaseorderId}")
 	public String show(@PathVariable Long id, Model model)
 	{
-		Order order = orderService.findOrderById(id);
+		PurchaseOrder order = orderService.findOrderById(id);
 		model.addAttribute(order);
-		return "storefront/order";
+		return "storefront/purchaseOrder";
 	}
 	
-	@GetMapping("/order")
+	@GetMapping("/purchaseOrder")
 	  public String getOrderPage(){
 	    //code
-	    return "storefront/order";
+	    return "storefront/purchaseOrder";
 	  }
 }
 
